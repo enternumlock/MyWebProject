@@ -1,0 +1,29 @@
+body{
+    background: #232323;
+}
+
+h1{
+    color: white;
+}
+
+#container{
+    max-width: 600px;
+    margin: 0 auto;
+
+}
+/*
+.circle{
+    background: green;
+    width: 30%;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+}*/
+
+.circle{
+    width: 20%;
+    background: green;
+    padding-bottom: 20%;
+    float: left;
+    margin: 1.66%;
+}
