@@ -19,6 +19,9 @@ var circles = document.querySelectorAll(".circle");
 // picking a color at index 7 from array
 var pickedColor = colors[7];
 var colorDisplay = document.querySelector("#colorDisplay");
+// create var massage display using id="#message"
+var messageDisplay = document.querySelector("#message");
+
 // displays the color name of pickedColor
 colorDisplay.textContent = pickedColor;
 
@@ -32,8 +35,13 @@ for (var i = 0; i < circles.length; i++) {
         console.log(clickedColor, pickedColor); // prints the clicked color and picked color on console
 
         if (clickedColor === pickedColor) {
+            messageDisplay.textContent = "CORRECT";
             console.log("correct");
         } else {
+            // change color to background color when wrong color is picked
+            this.style.background = "#232323";
+            // displaying message on span id = #message
+            messageDisplay.textContent = "TRY AGAIN";
             console.log("Wrong color");
             //alert("wrong");
         }
