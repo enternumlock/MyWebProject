@@ -17,7 +17,11 @@ var colors = [
 // select colors from class .circle
 var circles = document.querySelectorAll(".circle");
 // picking a color at index 7 from array
-var pickedColor = colors[7];
+// var pickedColor = colors[7];
+// select random color and call pickColor function
+var pickedColor = pickColor();
+console.log(pickedColor);
+
 var colorDisplay = document.querySelector("#colorDisplay");
 // create var massage display using id="#message"
 var messageDisplay = document.querySelector("#message");
@@ -37,6 +41,8 @@ for (var i = 0; i < circles.length; i++) {
         if (clickedColor === pickedColor) {
             messageDisplay.textContent = "CORRECT";
             console.log("correct");
+            // it will give all circles the same color as the pickedColor has
+            changeColor(clickedColor);
         } else {
             // change color to background color when wrong color is picked
             this.style.background = "#232323";
@@ -46,4 +52,19 @@ for (var i = 0; i < circles.length; i++) {
             //alert("wrong");
         }
     });
+}
+
+// creating changeColor function, give parameter color
+function changeColor(color) {
+    //loop through all circles
+    for (var i = 0; i < circles.length; i++) {
+        circles[i].style.background = color;
+    }
+}
+
+
+// creating function pickColor to select random color
+function pickColor() {
+    var random = Math.floor(Math.random() * colors.length);
+    return colors[random];
 }
